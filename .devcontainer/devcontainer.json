@@ -1,0 +1,22 @@
+{
+  "name": "Java Maven Project",
+  "dockerFile": "Dockerfile",
+  "settings": {
+    "java.home": "/docker-java-home",
+    "java.configuration.runtimes": [
+      {
+        "name": "JavaSE-21",
+        "path": "/docker-java-home",
+        "default": true
+      }
+    ],
+    "maven.executable.path": "/usr/bin/mvn"
+  },
+  "extensions": [
+    "vscjava.vscode-java-pack",
+    "vscjava.vscode-maven"
+  ],
+  "forwardPorts": [
+    8080
+  ]
+}
