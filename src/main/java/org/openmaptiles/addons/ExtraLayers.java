@@ -11,6 +11,7 @@ import org.openmaptiles.Layer;
  */
 public class ExtraLayers {
 
+  @SuppressWarnings("unused")
   public static List<Layer> create(Translations translations, PlanetilerConfig config, Stats stats) {
     return List.of(
       // Create classes that extend Layer interface in the addons package, then instantiate them here
