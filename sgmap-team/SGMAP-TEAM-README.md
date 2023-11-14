@@ -56,3 +56,13 @@ by using **--download** flag (may need to copy download url manually to browser 
 java -Xmx8g -jar .\target\planetiler-openmaptiles-3.14.0-with-deps.jar --force --area=singapore
 ```
 
+## Customization
+
+### Customize result from Generate.java
+
+Need to run in linux. Preferably from dev container opened from vs code.
+
+```
+./scripts/regenerate-openmaptiles.sh v3.14 https://raw.githubusercontent.com/openmaptiles/openmaptiles/
+```
+
