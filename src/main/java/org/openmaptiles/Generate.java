@@ -137,6 +137,14 @@ public class Generate {
     String baseUrl = arguments.getString("base-url", "the url used to download the openmaptiles.yml",
       "https://raw.githubusercontent.com/openmaptiles/openmaptiles/");
     String base = baseUrl + tag + "/";
+    // Special case for local development
+    if (tag == "local") {
+      base = baseUrl;
+      if (!baseUrl.endsWith("/")) {
+        base += "/";
+      }
+        LOGGER.info("Using local hosted openmaptiles.yml", base);
+    }
 
     // start crawling from openmaptiles.yaml
     // then crawl schema from each layers/<layer>/<layer>.yaml file that it references
