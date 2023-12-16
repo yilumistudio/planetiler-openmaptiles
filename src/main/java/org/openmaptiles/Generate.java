@@ -138,12 +138,12 @@ public class Generate {
       "https://raw.githubusercontent.com/openmaptiles/openmaptiles/");
     String base = baseUrl + tag + "/";
     // Special case for local development
-    if (tag == "local") {
+    if (tag.equals("local")) {
       base = baseUrl;
       if (!baseUrl.endsWith("/")) {
         base += "/";
       }
-        LOGGER.info("Using local hosted openmaptiles.yml", base);
+      LOGGER.info("Using local hosted openmaptiles.yml", base);
     }
 
     // start crawling from openmaptiles.yaml

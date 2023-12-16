@@ -8,6 +8,9 @@ Note that this library depends on https://github.com/onthegomap/planetiler
 
 #### Windows
 
+[obsolete] We just install IntelliJ IDEA on Windows. And use it to open project in wsl2.
+Therefore, all JDK and settings will be on wsl2.
+
 Follow this document: https://github.com/onthegomap/planetiler/blob/main/CONTRIBUTING.md
 
 1. Install JDK and IntelliJ IDEA. During JDK installation, if it uses Windows MSI installer, make sure JAVA_HOME is set.
@@ -19,10 +22,10 @@ Follow this document: https://github.com/onthegomap/planetiler/blob/main/CONTRIB
 3. In IntelliJ IDEA, make sure follow above document's `IDE SETUP` section.
 4. In terminal (Windows powershell), run `./mvnw.cmd clean test` and see if all tests passed.
 
-#### Dev container
+#### WSL2
 
 Some scripts in [scripts](../scripts) folder require bash and to be best run in linux.  
-You can use VS code to open this repo in dev container (require docker). All environments are created correctly.
+Best to install JDK 21 on WSL2 and run IntelliJ IDEA in wsl2.
 
 ### Maven
 
@@ -66,7 +69,7 @@ It will produce two jar files:
 
    ```
    # 8g is the max memory allowed for java
-   java -Xmx8g -jar .\target\planetiler-openmaptiles-3.14.0-with-deps.jar --force --area=singapore
+   java -Xmx8g -jar ./target/planetiler-openmaptiles-3.14.0-with-deps.jar --force --area=singapore
    ```
 
 ## Customization
