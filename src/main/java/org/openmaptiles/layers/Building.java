@@ -155,6 +155,11 @@ public class Building implements
       parseDoubleOrNull(element.buildingminLevel())
     );
 
+    Boolean isHDB = null;
+    if (element.residential() != null && element.residential().equalsIgnoreCase("HDB")) {
+      isHDB = true;
+    }
+
     int renderHeight = (int) Math.ceil(height != null ? height : levels != null ? (levels * 3.66) : 5);
     int renderMinHeight = (int) Math.floor(minHeight != null ? minHeight : minLevels != null ? (minLevels * 3.66) : 0);
 
@@ -166,6 +171,7 @@ public class Building implements
         .setAttrWithMinzoom(Fields.RENDER_MIN_HEIGHT, renderMinHeight, 14)
         .setAttrWithMinzoom(Fields.COLOUR, color, 14)
         .setAttrWithMinzoom(Fields.HIDE_3D, hide3d, 14)
+        .setAttrWithMinzoom(Fields.IS_HDB, isHDB, 14)
         .setSortKey(renderHeight);
       if (mergeZ13Buildings) {
         feature

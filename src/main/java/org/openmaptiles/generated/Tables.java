@@ -493,14 +493,16 @@ public class Tables {
   public record OsmBuildingPolygon(@Override String material, @Override String colour, @Override String building,
     @Override String buildingpart, @Override String buildingheight, @Override String buildingminHeight,
     @Override String buildinglevels, @Override String buildingminLevel, @Override String height,
-    @Override String minHeight, @Override String levels, @Override String minLevel, @Override SourceFeature source)
-    implements Row, WithMaterial, WithColour, WithBuilding, WithBuildingpart, WithBuildingheight, WithBuildingminHeight,
-    WithBuildinglevels, WithBuildingminLevel, WithHeight, WithMinHeight, WithLevels, WithMinLevel, WithSource {
+    @Override String minHeight, @Override String levels, @Override String minLevel, @Override String residential,
+    @Override SourceFeature source) implements Row, WithMaterial, WithColour, WithBuilding, WithBuildingpart,
+    WithBuildingheight, WithBuildingminHeight, WithBuildinglevels, WithBuildingminLevel, WithHeight, WithMinHeight,
+    WithLevels, WithMinLevel, WithResidential, WithSource {
     public OsmBuildingPolygon(SourceFeature source, String mappingKey) {
       this(source.getString("building:material"), source.getString("building:colour"), source.getString("building"),
         source.getString("building:part"), source.getString("building:height"), source.getString("building:min_height"),
         source.getString("building:levels"), source.getString("building:min_level"), source.getString("height"),
-        source.getString("min_height"), source.getString("levels"), source.getString("min_level"), source);
+        source.getString("min_height"), source.getString("levels"), source.getString("min_level"),
+        source.getString("residential"), source);
     }
 
     /** Imposm3 "mapping" to filter OSM elements that should appear in this "table". */
@@ -1219,6 +1221,11 @@ public class Tables {
   /** Rows with a String religion attribute. */
   public interface WithReligion {
     String religion();
+  }
+
+  /** Rows with a String residential attribute. */
+  public interface WithResidential {
+    String residential();
   }
 
   /** Rows with a String sacScale attribute. */

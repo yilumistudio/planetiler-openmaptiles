@@ -1205,6 +1205,8 @@ public class OpenMapTilesSchema {
        * <a href="https://wiki.openstreetmap.org/wiki/Simple_3D_buildings">building outlines</a> are marked as hide_3d.
        */
       public static final String HIDE_3D = "hide_3d";
+      /** [Yilumi] If True, building has this tag: residential:HDB. */
+      public static final String IS_HDB = "is_HDB";
     }
     /** Attribute values for map elements in the building layer. */
     final class FieldValues {
