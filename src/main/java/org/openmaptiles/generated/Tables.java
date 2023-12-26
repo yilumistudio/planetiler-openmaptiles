@@ -494,15 +494,15 @@ public class Tables {
     @Override String buildingpart, @Override String buildingheight, @Override String buildingminHeight,
     @Override String buildinglevels, @Override String buildingminLevel, @Override String height,
     @Override String minHeight, @Override String levels, @Override String minLevel, @Override String residential,
-    @Override SourceFeature source) implements Row, WithMaterial, WithColour, WithBuilding, WithBuildingpart,
-    WithBuildingheight, WithBuildingminHeight, WithBuildinglevels, WithBuildingminLevel, WithHeight, WithMinHeight,
-    WithLevels, WithMinLevel, WithResidential, WithSource {
+    @Override String model3d, @Override SourceFeature source) implements Row, WithMaterial, WithColour, WithBuilding,
+    WithBuildingpart, WithBuildingheight, WithBuildingminHeight, WithBuildinglevels, WithBuildingminLevel, WithHeight,
+    WithMinHeight, WithLevels, WithMinLevel, WithResidential, WithModel3d, WithSource {
     public OsmBuildingPolygon(SourceFeature source, String mappingKey) {
       this(source.getString("building:material"), source.getString("building:colour"), source.getString("building"),
         source.getString("building:part"), source.getString("building:height"), source.getString("building:min_height"),
         source.getString("building:levels"), source.getString("building:min_level"), source.getString("height"),
         source.getString("min_height"), source.getString("levels"), source.getString("min_level"),
-        source.getString("residential"), source);
+        source.getString("residential"), source.getString("model3d"), source);
     }
 
     /** Imposm3 "mapping" to filter OSM elements that should appear in this "table". */
@@ -1146,6 +1146,11 @@ public class Tables {
   /** Rows with a String minLevel attribute. */
   public interface WithMinLevel {
     String minLevel();
+  }
+
+  /** Rows with a String model3d attribute. */
+  public interface WithModel3d {
+    String model3d();
   }
 
   /** Rows with a String mtbScale attribute. */

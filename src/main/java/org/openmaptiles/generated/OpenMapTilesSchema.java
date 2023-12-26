@@ -1207,6 +1207,8 @@ public class OpenMapTilesSchema {
       public static final String HIDE_3D = "hide_3d";
       /** [Yilumi] If True, building has this tag: residential:HDB. */
       public static final String IS_HDB = "is_HDB";
+      /** [Yilumi] Has these values: batched. */
+      public static final String MODEL3D = "model3d";
     }
     /** Attribute values for map elements in the building layer. */
     final class FieldValues {

@@ -69,7 +69,7 @@ It will produce two jar files:
 
    ```
    # 8g is the max memory allowed for java
-   java -Xmx8g -jar ./target/planetiler-openmaptiles-3.14.0-with-deps.jar --force --area=singapore
+   java -Xmx8g -jar ./target/planetiler-openmaptiles-3.14.0-with-deps.jar --force --area=singapore --output=data/output/Singapore_bbbike_20231226.mbtiles
    ```
 
 ## Customization
