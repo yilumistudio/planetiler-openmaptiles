@@ -69,6 +69,10 @@ It will produce two jar files:
 
    ```
    # 8g is the max memory allowed for java
+   java -Xmx8g -jar ./target/planetiler-openmaptiles-3.14.0-with-deps.jar --force --area=singapore --output=data/output/Singapore_bbbike_20231226_with_debug_info.mbtiles --add_debug_info=true
+   ```
+   if no debug info required,
+   ```
    java -Xmx8g -jar ./target/planetiler-openmaptiles-3.14.0-with-deps.jar --force --area=singapore --output=data/output/Singapore_bbbike_20231226.mbtiles
    ```
 
@@ -96,3 +100,21 @@ Need to run in linux. Preferably from wsl with jdk 21 installed.
 ./scripts/regenerate-openmaptiles.sh version https://raw.githubusercontent.com/yilumistudio/openmaptiles/
 ```
 
+## Debug
+These environment needs to be met:
+   - IntelliJ IDEA installed on Windows.
+   - this project is cloned into wsl and opened by IntelliJ IDEA.
+
+To debug Generate.java. run 
+```
+./scripts/regenerate-openmaptiles.sh local http://localhost:23222/ debug
+```
+with debug flag, it will wait for debugger, attach debugger in IntelliJ IDEA's top right corner, select "debug regenerate-openmaptiles" profile to attach.
+The breakpoint in Generate.java will work.
+
+To debug main program, firstly make sure recompile the program by running `./mvnw clean pacakge`.
+Then debug with "Run Planetiler Jar" profile at IntelliJ IDEA's top right corner. 
+In console, there is a small button "Attach debugger". Attach it.
+The breakpoint in main src will work.
+
+If can't attach debugger, make sure any of above profiles has the correct wsl ip address. 

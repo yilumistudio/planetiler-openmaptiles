@@ -1209,6 +1209,8 @@ public class OpenMapTilesSchema {
       public static final String IS_HDB = "is_HDB";
       /** [Yilumi] Has these values: batched. */
       public static final String MODEL3D = "model3d";
+      /** [Yilumi] Debug info. */
+      public static final String DEBUG_INFO = "debug_info";
     }
     /** Attribute values for map elements in the building layer. */
     final class FieldValues {

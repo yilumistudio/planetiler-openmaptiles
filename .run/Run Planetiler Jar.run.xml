@@ -2,8 +2,8 @@
   <configuration default="false" name="Run Planetiler Jar" type="JarApplication">
     <option name="JAR_PATH" value="$PROJECT_DIR$/target/planetiler-openmaptiles-3.14.0-with-deps.jar" />
     <option name="VM_PARAMETERS" value="-Xmx8g" />
-    <option name="PROGRAM_PARAMETERS" value="--force --area=singapore" />
-    <option name="WORKING_DIRECTORY" value="D:\GitHub\sgmap-github-repos\yilumistudio\planetiler-openmaptiles" />
+    <option name="PROGRAM_PARAMETERS" value="--force --area=singapore --output=data/output/Singapore_bbbike_20231226_with_debug_info.mbtiles --add_debug_info=true" />
+    <option name="WORKING_DIRECTORY" value="\\wsl$\Ubuntu\home\wcai\github\yilumistudio\planetiler-openmaptiles" />
     <option name="ALTERNATIVE_JRE_PATH" />
     <method v="2" />
   </configuration>

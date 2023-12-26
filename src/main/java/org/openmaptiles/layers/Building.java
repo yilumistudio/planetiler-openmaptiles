@@ -102,12 +102,18 @@ public class Building implements
     entry("clay", "#9d8b75") // same as mud
   );
   private final boolean mergeZ13Buildings;
+  private final boolean addDebugInfo;
 
   public Building(Translations translations, PlanetilerConfig config, Stats stats) {
     this.mergeZ13Buildings = config.arguments().getBoolean(
       "building_merge_z13",
       "building layer: merge nearby buildings at z13",
       true
+    );
+    this.addDebugInfo = config.arguments().getBoolean(
+        "add_debug_info",
+        "if true, output vector tiles will contain debug info (i.e. 'osm id')",
+        false
     );
   }
 
@@ -183,6 +189,10 @@ public class Building implements
         feature
           .setMinPixelSize(0.1)
           .setPixelTolerance(0.25);
+      }
+      if (addDebugInfo) {
+        feature
+          .setAttrWithMinzoom(Fields.DEBUG_INFO, element.source().id(), 14);
       }
     }
   }
