@@ -494,15 +494,16 @@ public class Tables {
     @Override String buildingpart, @Override String buildingheight, @Override String buildingminHeight,
     @Override String buildinglevels, @Override String buildingminLevel, @Override String height,
     @Override String minHeight, @Override String levels, @Override String minLevel, @Override String residential,
-    @Override String model3d, @Override SourceFeature source) implements Row, WithMaterial, WithColour, WithBuilding,
-    WithBuildingpart, WithBuildingheight, WithBuildingminHeight, WithBuildinglevels, WithBuildingminLevel, WithHeight,
-    WithMinHeight, WithLevels, WithMinLevel, WithResidential, WithModel3d, WithSource {
+    @Override String model3d, @Override String hdb, @Override SourceFeature source)
+    implements Row, WithMaterial, WithColour, WithBuilding, WithBuildingpart, WithBuildingheight, WithBuildingminHeight,
+    WithBuildinglevels, WithBuildingminLevel, WithHeight, WithMinHeight, WithLevels, WithMinLevel, WithResidential,
+    WithModel3d, WithHdb, WithSource {
     public OsmBuildingPolygon(SourceFeature source, String mappingKey) {
       this(source.getString("building:material"), source.getString("building:colour"), source.getString("building"),
         source.getString("building:part"), source.getString("building:height"), source.getString("building:min_height"),
         source.getString("building:levels"), source.getString("building:min_level"), source.getString("height"),
         source.getString("min_height"), source.getString("levels"), source.getString("min_level"),
-        source.getString("residential"), source.getString("model3d"), source);
+        source.getString("residential"), source.getString("model3d"), source.getString("hdb"), source);
     }
 
     /** Imposm3 "mapping" to filter OSM elements that should appear in this "table". */
@@ -996,6 +997,11 @@ public class Tables {
   /** Rows with a String hasName attribute. */
   public interface WithHasName {
     String hasName();
+  }
+
+  /** Rows with a String hdb attribute. */
+  public interface WithHdb {
+    String hdb();
   }
 
   /** Rows with a String height attribute. */

@@ -23,7 +23,6 @@ public class Flora implements Layer, OpenMapTilesProfile.OsmAllProcessor {
         .setBufferPixels(4)
         .setMinZoom(14)
         .setAttr("class", source.getTag("flora"));
-      LOGGER.info("Creating flora point for " + source.id());
     }
   }
 }

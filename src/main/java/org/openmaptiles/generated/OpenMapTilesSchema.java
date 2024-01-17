@@ -1205,8 +1205,12 @@ public class OpenMapTilesSchema {
        * <a href="https://wiki.openstreetmap.org/wiki/Simple_3D_buildings">building outlines</a> are marked as hide_3d.
        */
       public static final String HIDE_3D = "hide_3d";
-      /** [Yilumi] If True, building has this tag: residential:HDB. */
-      public static final String IS_HDB = "is_HDB";
+      /**
+       * [Yilumi] hdb related info, e.g.&quot;17,2018,Y,N,N,N,N,N,HG&quot;. They are: &quot;hdb_max_floor_lvl,
+       * hdb_year_completed, hdb_residential, hdb_commercial, hdb_market_hawker, hdb_miscellaneous,
+       * hdb_multistorey_carpark, hdb_precinct_pavilion, hdb_bldg_contract_town&quot;.
+       */
+      public static final String HDB = "hdb";
       /** [Yilumi] Has these values: batched. */
       public static final String MODEL3D = "model3d";
       /** [Yilumi] Debug info. */
